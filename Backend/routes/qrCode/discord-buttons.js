@@ -60,7 +60,7 @@ async function Buttons(client) {
                             Enroll: qq.Enroll,
                             setNew: "PENDING",
                         },{
-                            Verified: "NO",
+                            Verified: "REJECTED",
                         },{
                             upsert: true,
                             new: false,
@@ -84,10 +84,13 @@ async function Buttons(client) {
                             )
                   
 
-                        return interaction.message.edit({
+                        interaction.message.edit({
                             components: [row],
                         })
 
+                        return interaction.reply(
+                            "Verification Rejected!!"
+                        )
                        
                     }
                 }
