@@ -21,7 +21,11 @@ const client = new Client({
 ] });
 
 const { MSG } = require("./routes/qrCode/try");
+const { Buttons } = require("./routes/qrCode/discord-buttons");
+const { NEWReq } = require('./routes/qrCode/try');
+
 MSG(client);
+Buttons(client);
 
 client.on("ready", async () => {
     console.log("Bot is alive");
@@ -43,7 +47,7 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const PORT = process.env.PORT || 5001;
 const path = require("path");
-const { NEWReq, tryyy } = require('./routes/qrCode/try');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'routes')));

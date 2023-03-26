@@ -17,10 +17,18 @@ userRouter.get("/Volunteer", async (req, res) => {
 })
 
 userRouter.get("/admin", async (req, res) => {
-  res.send("This is admin page");
+  // res.send("This is admin page");
+  res.sendFile(path.resolve(__dirname, 'qrCode', "admin.html"));
 });
 
+userRouter.get('/admin-data', async (req, res) => {
+  
+ const collection = require("../model/1.user")
 
+ const A1 = await collection.find()
+    res.send(A1);
+
+});
 userRouter.get("/gen", async (req, res) => {
   const tfty = require("./qrCode/generate");
       tfty.send();
@@ -30,17 +38,36 @@ userRouter.get("/gen", async (req, res) => {
 //userRouter
 userRouter.use(phaser.json());
 
-userRouter.post('/submit-data', (req, res) => {
+userRouter.post('/submit-data', async (req, res) => {
     const data = req.body;
     
-      const { SCANRESULT } = require("./qrCode/try")
+   //   const { SCANRESULT } = require("./qrCode/try")
       
-       const h1 = SCANRESULT(data);
-         console.log(h1);
-       if (h1 === 'Success') {
-     res.json("exists");
-       }    
+    //    const h1 = SCANRESULT(data);
+    //      console.log(h1);
+    //    if (h1 === 'Success') {
+    //  res.json("exists");
+    //    }    
+
+    const Roll = data.Email
+    // {Email: "http://364387645"}
+    const eroll = Roll
      
+    const M1 = require("../model/1.user");
+      const K1 = await M1.find({
+        Enroll: eroll,
+        QRUsed: "NO",
+        Verified: "YES"
+      })
+      if (K1) {
+        console.log(K1);
+        for (ii of K1) {
+            res.json({ user: ii.Enroll });
+        }
+
+        
+      }
+      else res.json({ user: null});
   })
 
 // userRouter.get("/api/data",async  (req, res) => {

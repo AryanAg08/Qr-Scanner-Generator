@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome, Admin</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Names</th>
+            <th>Enrollment</th>
+            <th>QR Usage</th>
+            <th>Mail</th>
+            <th>Mobile</th>
+            <th>Paid Amount (130/150)</th>
+          </tr>
+        </thead>
+        <tbody id="data">
+        </tbody>
+      </table>
+<br>
+<br>
+<hr>
+      <button onclick="window.location.href = 'http://localhost:5001/user/Volunteer';">Scan QR</button>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html

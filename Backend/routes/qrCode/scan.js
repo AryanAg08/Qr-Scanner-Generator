@@ -47,10 +47,12 @@ async function success(result) {
       })
       .then((response) => response.json())
       .then((data) => {
-        if (data === "exists") {
+        console.log(data);
+        if (data.user === result ) {
           alert("Success");
-        } else {
-          alert("Error!");
+        } 
+        else if (data.user != result) {
+          return alert("Error!");
         }
       })
       .catch((err) => console.error(err));

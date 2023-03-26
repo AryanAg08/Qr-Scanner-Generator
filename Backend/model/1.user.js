@@ -11,6 +11,7 @@ const us = new mongo.Schema({
     MailID: req,
     Branch: req,
     Paid: req,
+    PaidRS: req,
     QRUsed: req,
     ScannedBY: req,
     setNew: {

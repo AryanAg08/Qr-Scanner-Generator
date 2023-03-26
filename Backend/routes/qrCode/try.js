@@ -30,8 +30,7 @@ async function NEWReq (client) {
                     .setCustomId(`DY${Enrollment}`)
                     .setLabel("Deny")
                     .setStyle(ButtonStyle.Danger)
-                    )
-            ;
+                    );
 
                 const exampleEmbed = new EmbedBuilder()
 	.setColor(0x0099FF)
@@ -85,6 +84,8 @@ async function tryyy () {
         ScannedBY: "ARYAN",
         setNew: "YES",
         Verified: "NO",
+        MailID: "arya23456@example.com",
+        PaidRS: "150",
     },{
         upsert: true,
         new: true,

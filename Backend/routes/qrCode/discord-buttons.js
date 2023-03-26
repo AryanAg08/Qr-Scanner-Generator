@@ -30,7 +30,7 @@ async function Buttons(client) {
                         console.log(K4);
 
                             
-                        const row = new MessageActionRow()
+                        const row = new ActionRowBuilder()
                         .addComponents(
                             new ButtonBuilder()
                             .setCustomId('APPROVE')
@@ -46,10 +46,12 @@ async function Buttons(client) {
                             )
 
 
-                        return interaction.message.edit({
+                         interaction.message.edit({
                             components: [row],
                         })
-                        
+
+                      
+                        return interaction.reply("Verification Done!!");
                         
                     }
 
@@ -92,4 +94,8 @@ async function Buttons(client) {
 
             }
         });
+}
+
+module.exports = {
+    Buttons
 }
