@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+  </head>
+  <body>
+    <h1>Login Page</h1>
+    <hr>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <input type="submit" value="Submit">
+    </form> 
+    <script>
+      const users = {
+    alice: 'password1',
+    bob: 'password2',
+    charlie: 'password3'
+  };
+  
+  const admins = {
+    admin1: 'password2'
+  }
+  
+  // Get the form element and add an event listener for form submission
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+  
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+   // Check if the username and password match a set of pre-defined values
+   if (username in admins && admins[username] === password) {
+      // Redirect the user to a different URL
+      window.location.href = "http://localhost:5001/user/admin";
+      return false; // Prevent the default form submission behavior
+    }
+    // Check if the username and password match a set of pre-defined values
+    if (username in users && users[username] === password) {
+      // Redirect the user to a different URL
+      window.location.href = "http://localhost:5001/user/Volunteer";
+      return false; // Prevent the default form submission behavior
+    } else {
+      alert('Invalid username or password. Please try again.');
+      return false; // Prevent the default form submission behavior
+    }
+  });
+    </script>
+  </body>
+</html>
