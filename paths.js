@@ -1,9 +1,11 @@
 const adminPath = "http://localhost:5001/Admin";
 const VolunteerPath = "http://localhost:5001/user/Volunteer";
 const LoginPath = "http://localhost:5001/user/login"
+const DATAFRONTEND = "http://localhost:5001/frontdata";
 
 module.exports = {
     adminPath,
     VolunteerPath,
-    LoginPath
+    LoginPath,
+    DATAFRONTEND
 }

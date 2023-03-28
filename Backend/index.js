@@ -47,7 +47,8 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const PORT = process.env.PORT || 5001;
 const path = require("path");
-
+const { DATAFRONTEND } = require('../paths');
+const FORM = require("./model/1.user");
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'routes')));
@@ -60,6 +61,38 @@ app.use(cookieParser())
 
 app.get("/",(req,res)=>{
     res.send("hello")
+})
+
+app.get(DATAFRONTEND, async (req, res) => {
+    console.log(req.body)
+    const Name = req.body.Name
+    const Email = req.body.Email
+    const year = req.body.year
+    const Mobile = req.body.Mobile
+    const MailID = req.body.MaildID
+    const Branch = req.body.Branch
+    const Paid = req.body.Paid // IMG string
+    const setNew = "YES"
+    const Verified = "NO"
+   
+    const REgisterForm = new FORM ({
+        Name,
+        Email,
+        year,
+        Mobile,
+        MailID,
+        Branch,
+        Paid,
+        setNew,
+        Verified
+    });
+   
+    try {
+       const SAVEFORM = await REgisterForm.save();
+       res.json(SAVEFORM);
+     } catch (err) {
+       res.json({ message: err });
+     }
 })
 
 app.use("/user",userRouter)
