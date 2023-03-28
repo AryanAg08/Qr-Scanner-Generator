@@ -68,7 +68,7 @@ async function Buttons(client) {
                         console.log(K4);
 
                             
-                        const row = new MessageActionRow()
+                        const row = new ActionRowBuilder()
                         .addComponents(
                             new ButtonBuilder()
                             .setCustomId('APPROVE')
