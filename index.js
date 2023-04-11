@@ -47,7 +47,7 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const PORT = process.env.PORT || 5001;
 const path = require("path");
-const { DATAFRONTEND } = require('../paths');
+const { DATAFRONTEND } = require('./paths');
 const FORM = require("./model/1.user");
 const app = express();
 
