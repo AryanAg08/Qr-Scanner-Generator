@@ -2,7 +2,7 @@ const {Router} = require("express")
 const userRouter = Router()
 const path = require("path");
 const express = require("express");
-const { LoginPath } = require("../../paths");
+const { LoginPath } = require("./../paths");
 const phaser = require("body-parser");
 
 
