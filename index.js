@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const { Client, GatewayIntentBits, Events } = require("discord.js");
-const { token } = require("../config.json");
+//const { token } = require("../config.json");
 
 const client = new Client({ 
     intents: [
@@ -38,7 +38,7 @@ client.on("ready", async () => {
 });
 
 
-client.login(token);
+client.login(process.env.token);
 
 const express = require('express')
 const {connection} = require('./config/db')
