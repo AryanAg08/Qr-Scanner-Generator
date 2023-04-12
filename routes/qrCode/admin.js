@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-      url: "http://localhost:5001/user/admin-data", // Replace with  MongoDB server endpoint
+      url: "https://jscop8-0.herokuapp.com/user/admin-data", // Replace with  MongoDB server endpoint
       type: "GET",
       success: function (data) {
         $.each(data, function (index, value) {
