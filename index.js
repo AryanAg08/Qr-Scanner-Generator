@@ -62,7 +62,7 @@ app.use(function(req, res, next) {
   });
 
 app.use(cors({
-    origin : ['https://jscop8-0.herokuapp.com/', "http://localhost:3000"],
+    origin : ["http://localhost:3000"],
     
 }))
 app.use(cookieParser())
@@ -72,7 +72,7 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 
-app.post("/frontdata", async (req, res) => {
+app.get("/frontdata", async (req, res) => {
     console.log("From backend");
     console.log(req.body)
     /**
