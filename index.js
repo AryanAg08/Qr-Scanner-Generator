@@ -65,7 +65,7 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 
-app.get(DATAFRONTEND, async (req, res) => {
+app.get("/frontdata", async (req, res) => {
     console.log(req.body)
     /**
      * username: "",
