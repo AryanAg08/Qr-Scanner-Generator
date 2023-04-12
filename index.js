@@ -65,10 +65,9 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 
-app.get("/frontdata", async (req, res) => {
-    // console.log("From backend");
-    // console.log(req.body)
-    res.send("hello world");
+app.post("/frontdata", async (req, res) => {
+    console.log("From backend");
+    console.log(req.body)
     /**
      * username: "",
       email: "",
