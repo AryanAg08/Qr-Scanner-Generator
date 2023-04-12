@@ -55,8 +55,15 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'routes')));
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 app.use(cors({
     origin : ['https://jscop8-0.herokuapp.com/', "http://localhost:3000"],
+    
 }))
 app.use(cookieParser())
 
