@@ -76,34 +76,34 @@ app.post("/frontdata", async (req, res) => {
       mobile: "",
       Paid: imgurl,
      */
-    const Name = req.body.username
-    const MailID = req.body.email
-    const year = req.body.year
-    const Mobile = req.body.mobile
-    const Branch = req.body.branch
-    const Paid = req.body.Paid // IMG string
-    const Enroll = req.body.enrol
-    const setNew = "YES"
-    const Verified = "NO"
+    // const Name = req.body.username
+    // const MailID = req.body.email
+    // const year = req.body.year
+    // const Mobile = req.body.mobile
+    // const Branch = req.body.branch
+    // const Paid = req.body.Paid // IMG string
+    // const Enroll = req.body.enrol
+    // const setNew = "YES"
+    // const Verified = "NO"
    
-    const REgisterForm = new FORM ({
-        Name,
-        Enroll,
-        year,
-        Mobile,
-        MailID,
-        Branch,
-        Paid,
-        setNew,
-        Verified
-    });
+    // const REgisterForm = new FORM ({
+    //     Name,
+    //     Enroll,
+    //     year,
+    //     Mobile,
+    //     MailID,
+    //     Branch,
+    //     Paid,
+    //     setNew,
+    //     Verified
+    // });
    
-    try {
-       const SAVEFORM = await REgisterForm.save();
-       res.json(SAVEFORM);
-     } catch (err) {
-       res.json({ message: err });
-     }
+    // try {
+    //    const SAVEFORM = await REgisterForm.save();
+    //    res.json(SAVEFORM);
+    //  } catch (err) {
+    //    res.json({ message: err });
+    //  }
 })
 
 app.use("/user",userRouter)
