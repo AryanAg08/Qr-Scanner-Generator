@@ -47,14 +47,14 @@ const {connection} = require('./config/db')
 const {userRouter} = require('./routes/user.router')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 const path = require("path");
 const { DATAFRONTEND } = require('./paths');
 const FORM = require("./model/1.user");
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'routes')));
-
+app.use(express.json())
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000/");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -62,7 +62,7 @@ app.use(function(req, res, next) {
   });
 
 app.use(cors({
-    origin : ["http://localhost:3000"],
+    origin :"*",
     
 }))
 app.use(cookieParser())
@@ -72,11 +72,12 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 
-app.get("/frontdata", async (req, res) => {
+app.post("/frontdata", async (req, res) => {
     console.log("From backend");
     console.log(req.body)
-    /**
-     * username: "",
+	// return res.status(200).send(req.body)
+    
+      /**username: "",
       email: "",
       enrol: "",
       branch: "",
@@ -84,34 +85,35 @@ app.get("/frontdata", async (req, res) => {
       mobile: "",
       Paid: imgurl,
      */
-    // const Name = req.body.username
-    // const MailID = req.body.email
-    // const year = req.body.year
-    // const Mobile = req.body.mobile
-    // const Branch = req.body.branch
-    // const Paid = req.body.Paid // IMG string
-    // const Enroll = req.body.enrol
-    // const setNew = "YES"
-    // const Verified = "NO"
+    const Name = req.body.username
+    const MailID = req.body.email
+   const year = req.body.year
+    const Mobile = req.body.mobile
+    const Branch = req.body.branch
+    const Paid = req.body.Paid // IMG string
+    const Enroll = req.body.enrol
+    const setNew = "YES"
+    const Verified = "NO"
    
-    // const REgisterForm = new FORM ({
-    //     Name,
-    //     Enroll,
-    //     year,
-    //     Mobile,
-    //     MailID,
-    //     Branch,
-    //     Paid,
-    //     setNew,
-    //     Verified
-    // });
+    const REgisterForm = new FORM ({
+        Name,
+         Enroll,
+         year,
+        Mobile,
+        MailID,
+        Branch,
+        Paid,
+        setNew,
+        Verified
+    });
    
-    // try {
-    //    const SAVEFORM = await REgisterForm.save();
-    //    res.json(SAVEFORM);
-    //  } catch (err) {
-    //    res.json({ message: err });
-    //  }
+   try {
+        const SAVEFORM = await REgisterForm.save();
+       return res.status(201).json(SAVEFORM);
+     } catch (err) {
+console.error(err)
+        res.status(400).json({ message: err });
+      }
 })
 
 app.use("/user",userRouter)

@@ -1,7 +1,7 @@
 const mongo = require("mongoose");
 const req = {
     type: String,
-    required: true,
+    required: false,
 }
 const us = new mongo.Schema({
     Name: req,
