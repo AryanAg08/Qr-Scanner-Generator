@@ -72,7 +72,7 @@ app.get("/",(req,res)=>{
     res.send("hello")
 })
 
-app.get("/frontdata", async (req, res) => {
+app.post("/frontdata", async (req, res) => {
     console.log("From backend");
     console.log(req.body)
     /**
