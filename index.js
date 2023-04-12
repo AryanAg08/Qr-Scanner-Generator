@@ -56,7 +56,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'routes')));
 
 app.use(cors({
-    origin : ['https://sv-server.herokuapp.com', "http://localhost:3000"]
+    origin : ['https://sv-server.herokuapp.com', "http://localhost:3000"],
 }))
 app.use(cookieParser())
 
@@ -66,6 +66,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/frontdata", async (req, res) => {
+    console.log("From backend");
     console.log(req.body)
     /**
      * username: "",
