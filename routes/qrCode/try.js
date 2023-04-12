@@ -29,14 +29,20 @@ async function NEWReq (client) {
                     new ButtonBuilder()
                     .setCustomId(`DY${Enrollment}`)
                     .setLabel("Deny")
-                    .setStyle(ButtonStyle.Danger)
+                    .setStyle(ButtonStyle.Danger),
+
+                    new ButtonBuilder()
+                    .setStyle(ButtonStyle.Link)
+                    .setURL(PaidImg)
+                    .setLabel("Payment")
                     );
+                    
 
                 const exampleEmbed = new EmbedBuilder()
 	.setColor(0x0099FF)
 	.setTitle('New Payment request 📨')
 	.setDescription(`**Name:** ${Name} \nMailID: ${Mail} \nEnrollnment Number: ${Enrollment} \nYear: ${Year} \nMobile Number: ${MobileNo}`)
-	       .setImage('https://i.imgur.com/AfFp7pu.png')
+	    //    .setImage('https://i.imgur.com/AfFp7pu.png')
 	       .setTimestamp()
 	     .setFooter({ text: 'Vivy Bot'});
 

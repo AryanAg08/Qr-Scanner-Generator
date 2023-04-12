@@ -67,19 +67,28 @@ app.get("/",(req,res)=>{
 
 app.get(DATAFRONTEND, async (req, res) => {
     console.log(req.body)
-    const Name = req.body.Name
-    const Email = req.body.Email
+    /**
+     * username: "",
+      email: "",
+      enrol: "",
+      branch: "",
+      year: "",
+      mobile: "",
+      Paid: imgurl,
+     */
+    const Name = req.body.username
+    const MailID = req.body.email
     const year = req.body.year
-    const Mobile = req.body.Mobile
-    const MailID = req.body.MaildID
-    const Branch = req.body.Branch
+    const Mobile = req.body.mobile
+    const Branch = req.body.branch
     const Paid = req.body.Paid // IMG string
+    const Enroll = req.body.enrol
     const setNew = "YES"
     const Verified = "NO"
    
     const REgisterForm = new FORM ({
         Name,
-        Email,
+        Enroll,
         year,
         Mobile,
         MailID,

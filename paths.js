@@ -1,7 +1,7 @@
-const adminPath = "http://localhost:5001/Admin";
-const VolunteerPath = "http://localhost:5001/user/Volunteer";
-const LoginPath = "http://localhost:5001/user/login"
-const DATAFRONTEND = "http://localhost:5001/frontdata";
+const adminPath = "https://jscop8-0.herokuapp.com/Admin";
+const VolunteerPath = "https://jscop8-0.herokuapp.com/user/Volunteer";
+const LoginPath = "https://jscop8-0.herokuapp.com/user/login"
+const DATAFRONTEND = "https://jscop8-0.herokuapp.com/frontdata";
 
 module.exports = {
     adminPath,
