@@ -75,6 +75,7 @@ userRouter.post('/submit-data', async (req, res) => {
       },{
         upsert: true
       });
+      console.log(M2);
   })
 
 // userRouter.get("/api/data",async  (req, res) => {
