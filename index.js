@@ -23,14 +23,14 @@ const client = new Client({
 const { MSG } = require("./routes/qrCode/try");
 const { Buttons } = require("./routes/qrCode/discord-buttons");
 const { NEWReq } = require('./routes/qrCode/try');
-const { connection } = require("./config/db")
+const { mongo } = require("./config/db")
 
 MSG(client);
 Buttons(client);
 
 client.on("ready", async () => {
     console.log("Bot is alive");
-    connection()
+   await mongo();
 
     const schedule = require("node-schedule");
 
@@ -101,13 +101,13 @@ app.use("/user",userRouter)
 
 
 app.listen(PORT,async ()=>{
-    try{
-        await connection
-        console.log("connected to DB")
-    }catch(err){
-        console.log("Error connecting to DB")
-        console.log(err)
-    }
+    // try{
+    //    // await connection
+    //     console.log("connected to DB")
+    // }catch(err){
+    //     console.log("Error connecting to DB")
+    //     console.log(err)
+    // }
    console.log(`Listening on PORT ${PORT}`)
 })
 
