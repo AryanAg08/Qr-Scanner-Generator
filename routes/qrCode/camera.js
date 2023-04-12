@@ -3,14 +3,14 @@ const canvas = document.getElementById('canvas');
 const resultDiv = document.getElementById('result');
 
 // get user media
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then((stream) => {
-    video.srcObject = stream;
-    video.play();
-  })
-  .catch((err) => {
-    console.log('Error: ' + err.message);
-  });
+// navigator.mediaDevices.getUserMedia({ video: true })
+//   .then((stream) => {
+//     video.srcObject = stream;
+//     video.play();
+//   })
+//   .catch((err) => {
+//     console.log('Error: ' + err.message);
+//   });
 
 // scan QR code
 function scanQRCode() {
