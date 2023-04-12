@@ -23,12 +23,14 @@ const client = new Client({
 const { MSG } = require("./routes/qrCode/try");
 const { Buttons } = require("./routes/qrCode/discord-buttons");
 const { NEWReq } = require('./routes/qrCode/try');
+const { connection } = require("./config/db")
 
 MSG(client);
 Buttons(client);
 
 client.on("ready", async () => {
     console.log("Bot is alive");
+    connection()
 
     const schedule = require("node-schedule");
 
