@@ -64,10 +64,17 @@ userRouter.post('/submit-data', async (req, res) => {
         for (ii of K1) {
             res.json({ user: ii.Enroll });
         }
-
-        
       }
       else res.json({ user: null});
+      
+      const M2 = await M1.findOneAndUpdate({
+        Enroll: eroll,
+        Verified: "YES",
+      },{
+        QRUsed: "YES",
+      },{
+        upsert: true
+      });
   })
 
 // userRouter.get("/api/data",async  (req, res) => {
