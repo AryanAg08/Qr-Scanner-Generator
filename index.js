@@ -30,7 +30,7 @@ Buttons(client);
 
 client.on("ready", async () => {
     console.log("Bot is alive");
-   await mongo();
+   await mongo;
 
     const schedule = require("node-schedule");
 
