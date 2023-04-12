@@ -56,7 +56,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'routes')));
 
 app.use(cors({
-    origin : ['https://sv-server.herokuapp.com', "http://localhost:3000"],
+    origin : ['https://jscop8-0.herokuapp.com/', "http://localhost:3000"],
 }))
 app.use(cookieParser())
 
