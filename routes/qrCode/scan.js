@@ -43,7 +43,7 @@ async function success(result) {
         if (data.user === result ) {
           alert("Success");
         }
-        else {
+        else if (data.user === null){
            alert("Error!");
         }
       })
