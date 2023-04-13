@@ -38,7 +38,7 @@ userRouter.get("/gen", async (req, res) => {
 //userRouter
 userRouter.use(phaser.json());
 
-userRouter.post('/submit-data', async (req, res) => {
+userRouter.get('/submit-data', async (req, res) => {
     const data = req.body; 
 
     const Roll = data.Email
