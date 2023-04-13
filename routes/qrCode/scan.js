@@ -50,9 +50,9 @@ async function success(result) {
         console.log(data);
         if (data.user === result ) {
           alert("Success");
-        } 
-        else if (data.user != result) {
-          return alert("Error!");
+        }
+        else {
+           alert("Error!");
         }
       })
       .catch((err) => console.error(err));
