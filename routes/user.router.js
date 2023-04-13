@@ -39,15 +39,7 @@ userRouter.get("/gen", async (req, res) => {
 userRouter.use(phaser.json());
 
 userRouter.post('/submit-data', async (req, res) => {
-    const data = req.body;
-    
-   //   const { SCANRESULT } = require("./qrCode/try")
-      
-    //    const h1 = SCANRESULT(data);
-    //      console.log(h1);
-    //    if (h1 === 'Success') {
-    //  res.json("exists");
-    //    }    
+    const data = req.body; 
 
     const Roll = data.Email
     // {Email: "http://364387645"}
@@ -65,6 +57,7 @@ userRouter.post('/submit-data', async (req, res) => {
             res.json({ user: ii.Enroll });
         }
       }
+
       else res.json({ user: null});
       
       const M2 = await M1.findOneAndUpdate({

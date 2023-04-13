@@ -50,6 +50,7 @@ async function success(result) {
         console.log(data);
         if (data.user === result ) {
           alert("Success");
+          console.log(result.type);
         }
         else {
            alert("Error!");

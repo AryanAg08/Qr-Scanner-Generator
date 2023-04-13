@@ -1,5 +1,6 @@
 // write a function which runs every 1 minute and fetch data from mongodb
 const M1 = require("../../model/1.user");
+const { Generate } = require("./generate");
 
 async function NEWReq (client) {
     const schedule = require("node-schedule");
@@ -31,10 +32,10 @@ async function NEWReq (client) {
                     .setLabel("Deny")
                     .setStyle(ButtonStyle.Danger),
 
-                    new ButtonBuilder()
-                    .setStyle(ButtonStyle.Link)
-                    .setURL(PaidImg)
-                    .setLabel("Payment")
+                    // new ButtonBuilder()
+                    // .setStyle(ButtonStyle.Link)
+                    // .setURL(PaidImg)
+                    // .setLabel("Payment")
                     );
                     
 
@@ -70,9 +71,10 @@ async function MSG (client) {
     client.on("messageCreate", async message => {
         const { guild, user } = message;
     
-            if (message.content === "!try") {
+            if (message.content === "!test") {
                 console.log("TRYYY!!");
-                tryyy();
+               // tryyy();
+               Generate("3e4r5t6");
                 message.channel.send("HELLO WORKLD");
             }
     });
