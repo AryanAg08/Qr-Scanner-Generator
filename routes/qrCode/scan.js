@@ -1,12 +1,4 @@
 
-  // const { sendDataToServer } = require("./verifydata");
-
-
-//const { SCANRESULT } = require("./try");
-
-
-
-//const M1 = require("../../model/1.user");
 const scanner = new Html5QrcodeScanner('reader', { 
     // Scanner will be initialized in DOM inside element with id of 'reader'
     qrbox: {
@@ -50,7 +42,6 @@ async function success(result) {
         console.log(data);
         if (data.user === result ) {
           alert("Success");
-          console.log(result.type);
         }
         else {
            alert("Error!");
