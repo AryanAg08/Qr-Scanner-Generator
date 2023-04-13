@@ -70,6 +70,7 @@ async function NEWReq (client) {
 async function MSG (client) {
     client.on("messageCreate", async message => {
         const { guild, user } = message;
+        const Z1 = require("../../model/1.user");
     
             if (message.content === "!test") {
                 console.log("TRYYY!!");
@@ -77,7 +78,21 @@ async function MSG (client) {
                Generate("3e4r5t6");
                 message.channel.send("HELLO WORKLD");
             }
-    });
+
+            if (message.content === "!Change") {
+                console.log("Changing Qrs");
+                
+                const Z2 = await Z1.updateMany({
+                    Verified: "YES",
+                }, {
+                    QRUsed: "NO",
+                },{
+                    upsert: true,
+                    new: false,
+                });
+                console.log(Z2);
+            }
+     });
   	}
 
 async function tryyy () {
