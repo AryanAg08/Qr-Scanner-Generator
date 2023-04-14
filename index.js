@@ -34,9 +34,9 @@ client.on("ready", async () => {
 
     const schedule = require("node-schedule");
 
-    var j = schedule.scheduleJob("*/1 * * * *", async function () {
-        NEWReq(client);
-    })
+    // var j = schedule.scheduleJob("*/1 * * * *", async function () {
+    //     NEWReq(client);
+    // })
 });
 
 
