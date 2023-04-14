@@ -54,7 +54,7 @@ userRouter.post('/submit-data', async (req, res) => {
     const eroll = Roll
      
     const M1 = require("../model/1.user");
-      const K1 = await M1.find({
+      const K1 = await M1.findOne({
         Enroll: eroll,
         QRUsed: "NO",
         Verified: "YES"
