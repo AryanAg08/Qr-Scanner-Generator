@@ -22,7 +22,6 @@ const client = new Client({
 
 const { MSG } = require("./routes/qrCode/try");
 const { Buttons } = require("./routes/qrCode/discord-buttons");
-const { NEWReq } = require('./routes/qrCode/try');
 const { mongo } = require("./config/db")
 
 MSG(client);
@@ -31,12 +30,6 @@ Buttons(client);
 client.on("ready", async () => {
     console.log("Bot is alive");
    await mongo;
-
-    const schedule = require("node-schedule");
-
-    // var j = schedule.scheduleJob("*/1 * * * *", async function () {
-    //     NEWReq(client);
-    // })
 });
 
 

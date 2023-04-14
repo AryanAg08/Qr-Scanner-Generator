@@ -15,8 +15,11 @@ async function Buttons(client) {
 
                 for (qq of M2) {
                     if (BID === `AP${qq.Enroll}`) {
-
-                        Generate(qq.Enroll);
+                           const name = qq.name
+                           const Enroll = qq.Enroll
+                           const Mail = qq.MailID
+                           
+                        Generate(name, Enroll, Mail);
                         
                         const K4 = await M1.findOneAndUpdate({
                             Enroll: qq.Enroll,

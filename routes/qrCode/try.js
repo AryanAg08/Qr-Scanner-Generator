@@ -92,6 +92,10 @@ async function MSG (client) {
                 });
                 console.log(Z2);
             }
+
+            if (message.content === "!SendReq") {
+                NEWReq(client);
+            }
      });
   	}
 
