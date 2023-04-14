@@ -15,7 +15,7 @@ async function Buttons(client) {
 
                 for (qq of M2) {
                     if (BID === `AP${qq.Enroll}`) {
-                           const name = qq.name
+                           const name = qq.Name
                            const Enroll = qq.Enroll
                            const Mail = qq.MailID
                            
