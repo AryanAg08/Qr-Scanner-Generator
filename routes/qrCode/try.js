@@ -47,9 +47,7 @@ async function NEWReq (message) {
 	       .setTimestamp()
 	     .setFooter({ text: 'Vivy Bot'});
 
-      const IID = await message.channel.send({ embeds: [exampleEmbed], components: [row] });
-
-
+    message.channel.send({ embeds: [exampleEmbed], components: [row] });
           const M34 = await M1.findOneAndUpdate({
         Enroll: Enrollment,
     },{

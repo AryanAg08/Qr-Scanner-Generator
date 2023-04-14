@@ -42,7 +42,7 @@ const RR = path.join(__dirname, "../../try.pdf")
     }]
   }, (err, info) => {
     if (err) throw err;
-    console.log(`QR code sent to ${email}: ${info.response}`);
+    console.log(`QR code sent to ${Mail}: ${info.response}`);
   });
 })
 

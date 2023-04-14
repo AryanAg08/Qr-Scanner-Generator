@@ -11,3 +11,6 @@
 - Path changes To be made in: 
 admin.js 
 path.js
+
+
+- 
