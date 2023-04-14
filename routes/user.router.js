@@ -63,7 +63,7 @@ userRouter.post('/submit-data', async (req, res) => {
         console.log(K1);
        // for (ii of K1) {
             res.status(200).json({
-              user: eroll
+              user: K1.Enroll
             })
             
         //}
