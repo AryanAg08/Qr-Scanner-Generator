@@ -37,7 +37,10 @@ async function success(result) {
         },
         body: JSON.stringify({ Email })
       })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("This is reponse" + response); 
+        response.json()
+      })
       .then((data) => {
         console.log(data);
         
