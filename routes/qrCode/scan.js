@@ -37,12 +37,9 @@ async function success(result) {
         },
         body: JSON.stringify({ Email })
       })
-      .then((response) => {
-        console.log("This is reponse" + response); 
-        response.json()
-      })
+      .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("Frontside data:" +data);
         
           if (data.user === result ) {
             alert("Success");
