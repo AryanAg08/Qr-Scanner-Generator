@@ -56,17 +56,24 @@ userRouter.post('/submit-data', async (req, res) => {
     const M1 = require("../model/1.user");
       const K1 = await M1.findOne({
         Enroll: eroll,
-        QRUsed: "NO",
+       
         Verified: "YES"
       })
       if (K1) {
         console.log(K1);
-       // for (ii of K1) {
-            res.status(200).json({
-              user: K1.Enroll
-            })
-            
-        //}
+
+        if (K1.QRUsed === "NO") {
+          res.status(200).json({
+            user: K1.Enroll
+          })
+        }
+
+        else if (K1.QRUsed === "YES") {
+          res.status(200).json({
+            user: "QR Used!!!"
+          });
+        }
+    
         const M2 = await M1.findOneAndUpdate({
           Enroll: eroll,
           Verified: "YES",
@@ -82,6 +89,7 @@ userRouter.post('/submit-data', async (req, res) => {
       //.then (async () => {
         
     //});
+    
 
       })
       

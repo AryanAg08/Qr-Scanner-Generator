@@ -51,7 +51,11 @@ async function success(result) {
           if (data.user === result ) {
             alert("Success");
           }
-        //    else if (data.user === null){
+          else if (data.user === "QR Used!!!") {
+            alert("QR Used Already!");
+          }
+        //   
+        // else if (data.user === null){
         //     alert("Error!");
         //  }
       })
