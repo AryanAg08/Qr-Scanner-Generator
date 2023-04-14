@@ -32,10 +32,10 @@ async function NEWReq (client) {
                     .setLabel("Deny")
                     .setStyle(ButtonStyle.Danger),
 
-                    // new ButtonBuilder()
-                    // .setStyle(ButtonStyle.Link)
-                    // .setURL(PaidImg)
-                    // .setLabel("Payment")
+                    new ButtonBuilder()
+                    .setStyle(ButtonStyle.Link)
+                    .setURL(PaidImg)
+                    .setLabel("Payment")
                     );
                     
 
