@@ -40,7 +40,7 @@ async function success(result) {
       .then((response) => {
         console.log(response.status); // Will show you the status
     if (!response.ok) {
-      alert("error");  
+      alert("QR Invalid");  
       throw new Error("HTTP status " + response.status);
         
     }
