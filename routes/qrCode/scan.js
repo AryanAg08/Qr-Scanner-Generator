@@ -61,7 +61,7 @@ async function success(result) {
       })
       .catch((err) => {
         console.error(err);
-        alert("Error!!");
+        //alert("Error!!");
       });
             
     
