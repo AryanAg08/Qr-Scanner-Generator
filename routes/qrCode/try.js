@@ -2,10 +2,10 @@
 const M1 = require("../../model/1.user");
 const { Generate } = require("./generate");
 
-async function NEWReq (client) {
+async function NEWReq (message) {
     const schedule = require("node-schedule");
     const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js")
-    const channel = client.channels.cache.get("1089078303102599258");
+    // const channel = client.channels.cache.get("1089078303102599258");
    // var j = schedule.scheduleJob("*/1 * * * *", async function () {
         const M2 = await M1.find({
             setNew: "YES",
@@ -47,7 +47,7 @@ async function NEWReq (client) {
 	       .setTimestamp()
 	     .setFooter({ text: 'Vivy Bot'});
 
-      const IID = await channel.send({ embeds: [exampleEmbed], components: [row] });
+      const IID = await message.channel.send({ embeds: [exampleEmbed], components: [row] });
 
 
           const M34 = await M1.findOneAndUpdate({
@@ -94,7 +94,7 @@ async function MSG (client) {
             }
 
             if (message.content === "!SendReq") {
-                NEWReq(client);
+                NEWReq(message);
             }
      });
   	}
