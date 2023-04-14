@@ -52,7 +52,6 @@ userRouter.post('/submit-data', async (req, res) => {
     const Roll = data.Email
     // {Email: "http://364387645"}
     const eroll = Roll
-    console.log(eroll);
      
     const M1 = require("../model/1.user");
       const K1 = await M1.find({
@@ -60,20 +59,13 @@ userRouter.post('/submit-data', async (req, res) => {
         QRUsed: "NO",
         Verified: "YES"
       })
-      var kk;
       if (K1) {
         console.log(K1);
-
         for (ii of K1) {
-           kk += ii.Enroll
+            res.json({ user: ii.Enroll });
         }
       }
-      else {
-        kk += "null";
-      }
-
-      res.json({ user: kk });
-      //else res.json({ user: null});
+      else res.json({ user: null});
       
       const M2 = await M1.findOneAndUpdate({
         Enroll: eroll,
