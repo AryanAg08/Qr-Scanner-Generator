@@ -49,14 +49,14 @@
       // Check if the username and password match a set of pre-defined values
       if (username in admins && admins[username] === password) {
         // Redirect the user to a different URL
-        localStorage.setItem('auth', { username, type: 'adm' })
+        localStorage.setItem('auth', JSON.stringify({ username, type: 'adm' }))
         window.location.href = "https://backend.jiitopticachapter.in/user/admin";
         return false; // Prevent the default form submission behavior
       }
       // Check if the username and password match a set of pre-defined values
       if (username in users && users[username] === password) {
         // Redirect the user to a different URL
-        localStorage.setItem('auth', { username, type: 'vol' })
+        localStorage.setItem('auth', JSON.stringify( { username, type: 'vol' }))
         window.location.href = "https://backend.jiitopticachapter.in/user/Volunteer";
         
         return false; // Prevent the default form submission behavior

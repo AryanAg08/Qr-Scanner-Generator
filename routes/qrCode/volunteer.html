@@ -11,11 +11,10 @@
   <link rel="stylesheet" href="scan.css">
   <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
   <script>
-    const auth = localStorage.getItem('auth')
+    const auth = JSON.parse(localStorage.getItem('auth'))
     if (!auth || auth?.type !== 'vol') {
       localStorage.removeItem('auth')
       window.location.href = 'https://backend.jiitopticachapter.in/user'
-
     }
   </script>
 </head>
