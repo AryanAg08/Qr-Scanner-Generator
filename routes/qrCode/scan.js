@@ -43,9 +43,9 @@ async function success(result) {
           if (data.user === result ) {
             alert("Success");
           }
-        //    else if (data.user === null){
-        //     alert("Error!");
-        //  }
+           else if (data.user === null){
+            alert("Error!");
+         }
       })
       .catch((err) => {
         console.error(err);
