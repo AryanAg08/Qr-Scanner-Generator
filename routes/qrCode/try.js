@@ -89,6 +89,7 @@ async function MSG (client) {
                     new: false,
                 });
                 console.log(Z2);
+                message.channel.send("All QRs Reset Done ✅\n Ready for new acceptance 🚀");
             }
 
             if (message.content === "!SendReq") {
