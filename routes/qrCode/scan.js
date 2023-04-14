@@ -40,11 +40,15 @@ async function success(result) {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data.user === result ) {
-          alert("Success");
+        try {
+          if (data.user === result ) {
+            alert("Success");
+          }
         }
-        else if (data.user === null){
-           alert("Error!");
+        catch {
+          // else if (data.user === null){
+            alert("Error!");
+         //}
         }
       })
       .catch((err) => console.error(err));
