@@ -8,7 +8,7 @@ async function Generate (name, Enroll, Mail) {
 const filename = "qr.png";
 const path = require("path");
 // const rehn = require("")
-const RR = path.join(__dirname, "../../try.pdf")
+const RR = path.join(__dirname, "../../brochure.jpeg")
 
 
 // generate QR code using predefined token
@@ -29,14 +29,14 @@ const RR = path.join(__dirname, "../../try.pdf")
     from: 'aryangoyal625@gmail.com', // replace with your Gmail account email
     to: Mail,
     subject: 'QR code',
-    text: `Hello ${name} \n Your Enrollment: ${Enroll} \n Email: ${Mail} Your QR for JSCOP is below as attachment.`,
+    text: `Greetings ${name}!\n Thanks for registering for JSCOP 5.0 💫 \n Enrollment No.: ${Enroll} \n  For any query either contact on desk or any JIIT Optica coordinator available. \n Your QR code is attached below for food.\n This will be used for for the refreshments and will be verified at the counter. \nPFA brochure below.\n\n Regards \nJIITOPTICA TEAM`,
     attachments: [{
-      filename: "Try.pdf",
+      filename: "JSCOP Brochure",
       path: RR, // filename
       // content: url.split(',')[1],
       encoding: 'base64'
     }, {
-      filename: "QR.png",
+      filename: "QR",
       path: path.join(__dirname, "../../qr.png"),
       encoding: 'base64'
     }]
