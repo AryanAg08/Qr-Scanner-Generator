@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="admin.css" />
   <script>
     const auth = localStorage.getItem('auth')
-    if (!auth || auth?.type !== 'adm') {
-      localStorage.removeItem('auth')
-      window.location.href = 'https://backend.jiitopticachapter.in/user'
+    console.log(auth);
+    // if (!auth || auth?.type !== 'adm') {
+    //   localStorage.removeItem('auth')
+    //   window.location.href = 'https://backend.jiitopticachapter.in/user'
 
-    }
+    // }
   </script>
 </head>
 
