@@ -95,6 +95,7 @@ async function MSG (client) {
 
             if (message.content === "!SendReq") {
                 NEWReq(message);
+                message.reply("Sending!!")
             }
      });
   	}
