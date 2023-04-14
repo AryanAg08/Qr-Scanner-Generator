@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Page</title>
   <link rel="stylesheet" href="admin.css" />
-  <script>
+  <script defer>
     let auth = JSON.parse(localStorage.getItem('auth'))
-    if (!auth || auth?.type == 'adm') {
+    if (!auth || auth?.type !== 'adm') {
       localStorage.removeItem('auth')
       window.location.href = 'https://backend.jiitopticachapter.in/user'
     }
