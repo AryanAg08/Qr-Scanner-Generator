@@ -37,15 +37,23 @@ async function success(result) {
         },
         body: JSON.stringify({ Email })
       })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.status); // Will show you the status
+    if (!response.ok) {
+      alert("error");  
+      throw new Error("HTTP status " + response.status);
+        
+    }
+    return response.json();
+      })
       .then((data) => {
         console.log("Frontside data:" +data);
           if (data.user === result ) {
             alert("Success");
           }
-           else if (data.user === null){
-            alert("Error!");
-         }
+        //    else if (data.user === null){
+        //     alert("Error!");
+        //  }
       })
       .catch((err) => {
         console.error(err);

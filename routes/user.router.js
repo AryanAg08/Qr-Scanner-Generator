@@ -78,7 +78,7 @@ userRouter.post('/submit-data', async (req, res) => {
         });
         console.log(M2);
       }
-      else res.status(404).json
+      else res.status(422).send({error: "Same response!!"});
       //.then (async () => {
         
     //});
