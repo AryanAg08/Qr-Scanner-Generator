@@ -1,7 +1,7 @@
-const adminPath = "https://jscop8-0.herokuapp.com/Admin";
-const VolunteerPath = "https://jscop8-0.herokuapp.com/user/Volunteer";
-const LoginPath = "https://jscop8-0.herokuapp.com/user/login"
-const DATAFRONTEND = "https://jscop8-0.herokuapp.com/frontdata";
+const adminPath = "https://backend.jiitopticachapter.in/Admin";
+const VolunteerPath = "https://backend.jiitopticachapter.in/user/Volunteer";
+const LoginPath = "https://backend.jiitopticachapter.in/user/login"
+const DATAFRONTEND = "https://backend.jiitopticachapter.in/frontdata";
 
 module.exports = {
     adminPath,
