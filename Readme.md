@@ -16,4 +16,4 @@ Event Pass along with their special QRs were sent to each respective person. Whi
 
  </ul> 
 
-[![](https://drive.google.com/file/d/1DYHnLX9s_Pmqq01lBjmc3sJ9OZtGNppz/view)]
+[![](./req.png)]
