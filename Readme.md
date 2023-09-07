@@ -16,4 +16,4 @@ Event Pass along with their special QRs were sent to each respective person. Whi
 
  </ul> 
 
-[![](./req.png)]
+![](./req.png)
