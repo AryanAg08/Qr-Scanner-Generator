@@ -10,7 +10,7 @@
     let auth = JSON.parse(localStorage.getItem('auth'))
     if (!auth || auth?.type !== 'adm') {
       localStorage.removeItem('auth')
-      window.location.href = 'https://backend.jiitopticachapter.in/user'
+      window.location.href = 'https://ticker-validator-2a31f8f74db7.herokuapp.com/user'
     }
     
   </script>
@@ -36,7 +36,7 @@
     <br>
     <br>
     <hr>
-    <button onclick="window.location.href = 'https://backend.jiitopticachapter.in/user/Volunteer';">Scan QR</button>
+    <button onclick="window.location.href = 'https://ticker-validator-2a31f8f74db7.herokuapp.com/user/Volunteer';">Scan QR</button>
 
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
