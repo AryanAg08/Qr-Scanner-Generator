@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-      url: "https://backend.jiitopticachapter.in/user/admin-data", // Replace with  MongoDB server endpoint
+      url: "https://ticker-validator-2a31f8f74db7.herokuapp.com/user/admin-data", // Replace with  MongoDB server endpoint
       type: "GET",
       success: function (data) {
         $.each(data, function (index, value) {
