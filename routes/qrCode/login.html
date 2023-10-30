@@ -10,9 +10,9 @@
     const auth = localStorage.getItem('auth')
     if (auth) {
       if (auth?.type == 'adm') {
-        window.location.href = 'https://backend.jiitopticachapter.in/user/admin'
+        window.location.href = 'https://ticker-validator-2a31f8f74db7.herokuapp.com/user/admin'
       } else if (auth?.type == 'vol') {
-        window.location.href = 'https://backend.jiitopticachapter.in/user/Volunteer'
+        window.location.href = 'https://ticker-validator-2a31f8f74db7.herokuapp.com/user/Volunteer'
       }
     }
   </script>
@@ -50,14 +50,14 @@
       if (username in admins && admins[username] === password) {
         // Redirect the user to a different URL
         localStorage.setItem('auth', JSON.stringify({ username, type: 'adm' }))
-        window.location.href = "https://backend.jiitopticachapter.in/user/admin";
+        window.location.href = "https://ticker-validator-2a31f8f74db7.herokuapp.com/user/admin";
         return false; // Prevent the default form submission behavior
       }
       // Check if the username and password match a set of pre-defined values
       if (username in users && users[username] === password) {
         // Redirect the user to a different URL
         localStorage.setItem('auth', JSON.stringify( { username, type: 'vol' }))
-        window.location.href = "https://backend.jiitopticachapter.in/user/Volunteer";
+        window.location.href = "https://ticker-validator-2a31f8f74db7.herokuapp.com/user/Volunteer";
         
         return false; // Prevent the default form submission behavior
       } else {
